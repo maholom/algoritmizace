@@ -1,6 +1,6 @@
 import './index.html';
 
-const vstup = [
+const data = [
   { size: 2.82 },
   { size: 0.91 },
   { size: 0.76 },
@@ -70,12 +70,9 @@ const vstup = [
 ];
 
 const binPacker = require('bin-packer'),
-  data = vstup,
   sizeOf = (item) => item['size'],
   capacity = 4,
   result = binPacker.bestFitDecreasing(data.slice(), sizeOf, capacity);
 
 console.log('Bins: %O', result.bins);
 console.log('Oversized: %O', result.oversized);
-
-console.log('funguju!');
